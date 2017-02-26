@@ -1,9 +1,11 @@
-angular.module('app.controllers', [
-    'app.service'
-])
+(function () {
+    'use strict';
 
-    .controller('HomeCtrl', ['$scope','Service',
-        function ($scope,Service) {
-            $scope.data = Service.get();
-        }])
+    angular.module('app.controllers').controller('HomeCtrl', ['$scope','Service', HomeCtrl]);
+
+    function HomeCtrl($scope,Service) {
+        $scope.data = Service.get();
+    }
+
+})();
 

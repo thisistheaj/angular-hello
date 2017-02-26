@@ -1,13 +1,17 @@
-angular.module('app.service', [])
-    .factory('Service', function () {
+(function () {
+    'use strict';
+
+    angular.module('app.service').factory('Service', Service);
+
+    function Service() {
         //public
         var service = {
-            get:get
+            get: get
         };
 
         //private
         var data = {
-            name:"World"
+            name: "World"
         };
 
         function get() {
@@ -15,4 +19,6 @@ angular.module('app.service', [])
         }
 
         return service;
-    });
+    }
+
+})();
